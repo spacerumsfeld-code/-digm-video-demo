@@ -9,3 +9,5 @@ Goal: Spin up a demo of MUX, with an attractive frontend to display the full flo
 6. What will this lambda do? hmm good question. I'd say we just write the url to a single table.
 
 we'll have topnav and side nav for fun, but the sole functional page will be the one where we upload vidoes.
+
+layout: top nav, with upper and lower, I think thatll do for our purposes.
