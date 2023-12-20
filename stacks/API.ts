@@ -1,24 +1,27 @@
-import { StackContext, Api } from "sst/constructs";
+import { StackContext, Api, use } from "sst/constructs";
+import { BucketStack } from "./Bucket";
+import { SettingsStack } from "./Settings";
 
-export function API({ stack }: StackContext) {
+export function APIStack({ stack }: StackContext) {
+  /** Imports */
+  const { bucket } = use(BucketStack);
+  const { MUX_TOKEN_ID, MUX_TOKEN_SECRET } = use(SettingsStack);
 
   const api = new Api(stack, "api", {
     defaults: {
       function: {
-        bind: [],
+        bind: [bucket, MUX_TOKEN_ID, MUX_TOKEN_SECRET],
       },
     },
     routes: {
-      "GET /video-urls": "packages/functions/src/videoUrlsGet.handler",
-      "POST /upload-video": "packages/functions/src/videoPost.handler",
+      "GET /presigned-url": "libs/functions/src/api/presignedUrlGet.handler",
+      "GET /video-urls": "libs/functions/src/api/videoUrlsGet.handler"
     },
     cors: {
-      allowCredentials: true,
-      allowHeaders: ['Content-Type', 'Authorization'],
+      allowHeaders: ['*'],
       allowMethods: ['ANY'],
       allowOrigins: [
           'http://localhost:3000',
-          'https://backcastmarket-dev.com, https://backcastmarket.com',
       ],
   },
   });
@@ -26,4 +29,6 @@ export function API({ stack }: StackContext) {
   stack.addOutputs({
     ApiEndpoint: api.url,
   });
+
+  return { api }
 }

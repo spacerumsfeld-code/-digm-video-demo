@@ -1,8 +1,12 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
-  "exclude": ["packages"],
+  "exclude": ["apps", "libs"],
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node"
+  },
+  "baseUrl": ".",
+  "paths": {
+    "@core": ["libs/core/index.ts"],
   }
 }

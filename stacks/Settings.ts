@@ -1,8 +1,9 @@
 import { StackContext, Config } from 'sst/constructs'
 
-export function ConfigStack({ stack }: StackContext) {
+export function SettingsStack({ stack }: StackContext) {
     const settings = {
-        WEB_URL: new Config.Secret(stack, 'WEB_URL'),
+        MUX_TOKEN_ID: new Config.Secret(stack, 'MUX_TOKEN_ID'),
+        MUX_TOKEN_SECRET: new Config.Secret(stack, 'MUX_TOKEN_SECRET')
     }
 
     return settings

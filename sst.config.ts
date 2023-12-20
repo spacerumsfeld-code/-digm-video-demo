@@ -1,5 +1,9 @@
 import { SSTConfig } from "sst";
-import { API } from "./stacks/API";
+import { SettingsStack } from './stacks/Settings';
+import { BucketStack } from   "./stacks/Bucket";
+import { APIStack } from "./stacks/API";
+import { TableStack } from "./stacks/Table";
+import { WebhookStack } from "./stacks/Webhook";
 
 export default {
   config(_input) {
@@ -9,6 +13,10 @@ export default {
     };
   },
   stacks(app) {
-    app.stack(API);
+    app.stack(SettingsStack)
+    app.stack(BucketStack)
+    app.stack(TableStack)
+    app.stack(WebhookStack)
+    app.stack(APIStack);
   }
 } satisfies SSTConfig;

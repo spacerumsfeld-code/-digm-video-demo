@@ -3,5 +3,6 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node"
-  }
+  },
+  "include": ["../../.sst/types/index.ts", "**/*.ts"]
 }

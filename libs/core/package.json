@@ -1,5 +1,5 @@
 {
-  "name": "@mux-demo/core",
+  "name": "core",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -7,11 +7,13 @@
     "typecheck": "tsc -noEmit"
   },
   "devDependencies": {
-    "vitest": "^1.1.0",
     "@types/node": "^20.10.5",
-    "sst": "^2.38.7"
+    "sst": "^2.38.7",
+    "vitest": "^1.1.0"
   },
   "dependencies": {
+    "@mux/mux-node": "^7.3.3",
+    "aws-sdk": "^2.1522.0",
     "zod": "^3.22.4"
   }
 }

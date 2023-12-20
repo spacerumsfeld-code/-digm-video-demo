@@ -12,12 +12,13 @@ export const BucketStack = ({ stack }: StackContext) => {
         notifications: {
             processVideo: {
               function: {
-                handler: "packages/functions/src/processVideo.main",
+                handler: "libs/functions/src/bucket/processVideo.handler",
               },
               events: ["object_created"],
             },
           },
     })
+    bucket.attachPermissions([bucket]);
 
     return {
         bucket,

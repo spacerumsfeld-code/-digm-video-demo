@@ -1,0 +1,1 @@
+export { VideoService } from './src/video.service';

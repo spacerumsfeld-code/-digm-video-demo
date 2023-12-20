@@ -11,3 +11,6 @@ Goal: Spin up a demo of MUX, with an attractive frontend to display the full flo
 we'll have topnav and side nav for fun, but the sole functional page will be the one where we upload vidoes.
 
 layout: top nav, with upper and lower, I think thatll do for our purposes.
+
+file upload input -> GET presignedUrl -> use return to POST uploadVideo -> confirmation of some kind
+->  bucket uses notification func to send video to mux -> mux hits up our webhook func and we store mux-location of video in table -> frontend queries for videoUrls and drops them into Mux frontend renderers.

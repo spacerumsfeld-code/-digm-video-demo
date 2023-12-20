@@ -2,14 +2,13 @@
 
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, XMarkIcon, UserIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
 const navigation = [
-  { name: 'Projects', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Materials', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  { name: 'Home', href: '/', current: false},
+  { name: 'Upload', href: '/upload', current: false },
+  { name: 'View Videos', href: '/videos', current: false },
 ]
 
 function classNames(...classes: string[]) {
@@ -77,15 +76,13 @@ export const Navbar = () => {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Menu.Button className="text-gray-400 relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
-                      <img
+                      <UserIcon
                         className="h-8 w-8 rounded-full"
                         width={150}
                         height={150}
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
                       />
                     </Menu.Button>
                   </div>
@@ -105,7 +102,7 @@ export const Navbar = () => {
                             href="#"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Your Profile
+                            Just
                           </a>
                         )}
                       </Menu.Item>
@@ -115,7 +112,7 @@ export const Navbar = () => {
                             href="#"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Settings
+                            For
                           </a>
                         )}
                       </Menu.Item>
@@ -125,7 +122,7 @@ export const Navbar = () => {
                             href="#"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
-                            Sign out
+                            Show
                           </a>
                         )}
                       </Menu.Item>

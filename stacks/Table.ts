@@ -1,12 +1,12 @@
 import { StackContext, Table } from "sst/constructs";
 
 export function TableStack({ stack }: StackContext) {
-  // Create the table
-  const table = new Table(stack, "Counter", {
+  const table = new Table(stack, "videos", {
     fields: {
-      videoUrl: "string",
+      playbackId: "string",
+      assetId: "string",
     },
-    primaryIndex: { partitionKey: "videoUrl" },
+    primaryIndex: { partitionKey: "playbackId" },
   });
 
   return { table }
