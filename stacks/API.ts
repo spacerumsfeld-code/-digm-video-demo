@@ -23,7 +23,7 @@ export function APIStack({ stack }: StackContext) {
       allowMethods: ['ANY'],
       allowOrigins: [
           'http://localhost:3000',
-          'https://digm-video-demo-client-dcg5a2hhi-poes-pursuits.vercel.app/'
+          'https://digm-video-demo-client-git-main-poes-pursuits.vercel.app/'
       ],
   },
   });
