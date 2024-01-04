@@ -13,8 +13,10 @@
     "vitest": "^1.1.0"
   },
   "dependencies": {
+    "@aws-sdk/client-apigatewaymanagementapi": "^3.484.0",
     "@aws-sdk/client-s3": "^3.476.0",
     "@aws-sdk/s3-request-presigner": "^3.476.0",
-    "@mux/mux-node": "^7.3.3"
+    "@mux/mux-node": "^7.3.3",
+    "aws-sdk": "^2.1522.0"
   }
 }

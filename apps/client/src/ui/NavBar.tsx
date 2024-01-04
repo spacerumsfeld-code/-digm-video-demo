@@ -7,7 +7,6 @@ import Image from 'next/image'
 
 const navigation = [
   { name: 'Home', href: '/', current: false},
-  { name: 'Upload', href: '/upload', current: false },
   { name: 'View Videos', href: '/videos', current: false },
 ]
 

@@ -1,16 +1,17 @@
 import { StackContext, Api, use } from "sst/constructs";
 import { BucketStack } from "./Bucket";
 import { SettingsStack } from "./Settings";
+import { TableStack } from "./Table";
 
 export function APIStack({ stack }: StackContext) {
-  /** Imports */
   const { bucket } = use(BucketStack);
+  const { table } = use(TableStack);
   const { MUX_TOKEN_ID, MUX_TOKEN_SECRET } = use(SettingsStack);
 
   const api = new Api(stack, "api", {
     defaults: {
       function: {
-        bind: [bucket, MUX_TOKEN_ID, MUX_TOKEN_SECRET],
+        bind: [bucket, table, MUX_TOKEN_ID, MUX_TOKEN_SECRET],
       },
     },
     routes: {
@@ -22,6 +23,7 @@ export function APIStack({ stack }: StackContext) {
       allowMethods: ['ANY'],
       allowOrigins: [
           'http://localhost:3000',
+          'https://digm-video-demo-client-dcg5a2hhi-poes-pursuits.vercel.app/'
       ],
   },
   });

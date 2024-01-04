@@ -14,8 +14,8 @@ export default {
   },
   stacks(app) {
     app.stack(SettingsStack)
-    app.stack(BucketStack)
     app.stack(TableStack)
+    app.stack(BucketStack)
     app.stack(WebhookStack)
     app.stack(APIStack);
   }
