@@ -22,7 +22,7 @@ export function APIStack({ stack }: StackContext) {
     cors: {
       allowHeaders: ['*'],
       allowMethods: ['ANY'],
-      allowOrigins: ['https://*.vercel.app'],
+      allowOrigins: ["http://localhost:3000", "https://digm-video-demo-client-git-main-poes-pursuits.vercel.app"]
     },
   });
 
