@@ -11,6 +11,7 @@ export function APIStack({ stack }: StackContext) {
   const api = new Api(stack, "api", {
     defaults: {
       function: {
+        runtime: 'nodejs18.x',
         bind: [bucket, table, MUX_TOKEN_ID, MUX_TOKEN_SECRET],
       },
     },
@@ -21,8 +22,8 @@ export function APIStack({ stack }: StackContext) {
     cors: {
       allowHeaders: ['*'],
       allowMethods: ['ANY'],
-      allowOrigins: ['*'],
-  },
+      allowOrigins: ['https://*.vercel.app'],
+    },
   });
 
   stack.addOutputs({

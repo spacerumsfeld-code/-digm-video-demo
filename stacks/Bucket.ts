@@ -18,6 +18,7 @@ export const BucketStack = ({ stack }: StackContext) => {
         notifications: {
             processVideo: {
               function: {
+                runtime: 'nodejs18.x',
                 handler: "libs/functions/src/bucket/processVideo.handler",
                 bind: [table, MUX_TOKEN_ID, MUX_TOKEN_SECRET],
               },
