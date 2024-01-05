@@ -17,7 +17,7 @@ export default async function VideoPage() {
     const videosExist = videos && videos.length > 0
     return (
         <div className="bg-gray-900" style={{ minHeight: '100vh' }}> 
-        <ul role="list" className="m-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+        <ul role="list" className="p-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
                 {videosExist ? videos.map((video: any) => (
                     <li key={video.id}>
                         <VideoPlayer playbackId={video.playbackId} />
